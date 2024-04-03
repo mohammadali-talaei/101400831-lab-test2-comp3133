@@ -1,0 +1,37 @@
+<div
+  class="container mx-auto p-8 bg-[#F5F8FA] space-x-8 space-y-8 flex"
+  *ngIf="missionDetails"
+>
+  <img
+    class="w-1/4 h-auto"
+    [src]="missionDetails.links.mission_patch"
+    alt="Mission Patch"
+  />
+  <div>
+    <p class="text-3xl font-semibold">{{ missionDetails.mission_name }}</p>
+    <section>
+      <p>Flight Number: {{ missionDetails.flight_number }}</p>
+      <p>Launch Year: {{ missionDetails.launch_year }}</p>
+      <p>Launch Date: {{ missionDetails.launch_date_utc }}</p>
+      <p>Details: {{ missionDetails.details }}</p>
+      <p>
+        Wikipedia:
+        <a [href]="missionDetails.links.wikipedia" target="_blank">{{
+          missionDetails.links.wikipedia
+        }}</a>
+      </p>
+      <p>
+        Video:
+        <a [href]="missionDetails.links.video_link" target="_blank">{{
+          missionDetails.links.video_link
+        }}</a>
+      </p>
+      <p>
+        Article:
+        <a [href]="missionDetails.links.article_link" target="_blank">{{
+          missionDetails.links.article_link
+        }}</a>
+      </p>
+    </section>
+  </div>
+</div>
